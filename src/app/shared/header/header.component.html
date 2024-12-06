@@ -1,0 +1,45 @@
+<header class="header-container">
+  <div class="logo">
+    <img src="Logo.png" alt="Logo" class="logo-img" />
+    <div class="header-content">
+      <h1 class="site-title">My Clinic</h1>
+      <p class="site-subtitle">Your trusted platform for seamless medical appointments.</p>
+    </div>
+  </div>
+  <nav class="auth">
+    <ng-container *ngIf="isAuthenticated; else loginLink">
+      <span class="welcome-text">Welcome, {{ username }}</span>
+      <button class="auth-btn logout-btn" (click)="logout()">Logout</button>
+    </ng-container>
+    <ng-template #loginLink>
+      <img src="user.webp" alt="User Icon" class="user-icon" />
+      <button class="auth-btn login-btn" (click)="login()">Login</button>
+    </ng-template>
+  </nav>
+</header>
+
+<nav class="navbar">
+  <ul class="navbar-menu">
+    <li><a class="navbar-link" (click)="services()">Services</a></li>
+    <li><a class="navbar-link" (click)="reserve()">Appointment</a></li>
+    <li><a class="navbar-link" (click)="specialties()">Specialties</a></li>
+    <li><a class="navbar-link" (click)="emergency()">Emergency</a></li>
+    <li><a class="navbar-link" (click)="calendars()">Calendar</a></li>
+    <li><a class="navbar-link" (click)="listClients()">Clients</a></li>
+  </ul>
+</nav>
+
+<section class="banner" id="home">
+  <div class="image-container">
+    <img src="medic.jpg" alt="Banner" class="banner-img" />
+  </div>
+  <div class="banner-content">
+    <img src="Logo.png" alt="Logo" class="logoB" />
+    <h2>Welcome to UTP Clinic</h2>
+    <p>Your health is our priority. Book your medical appointment easily</p>
+    <div class="banner-buttons">
+      <a href="Patient.html" class="btn">I am patient</a>
+      <a href="Doctor.html" class="btn">I am Doctor</a>
+    </div>
+  </div>
+</section>

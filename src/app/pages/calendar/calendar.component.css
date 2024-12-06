@@ -1,0 +1,84 @@
+.calendar-container {
+  padding-bottom: 2rem;
+}
+
+.calendar-container .calendar-content {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+}
+
+.calendar-container .calendar-content .calendar-header {
+  padding: 0.25rem;
+  text-align: center;
+  color: #333333;
+}
+
+.calendar-container .calendar-content .calendar-header:first-of-type {
+  color: #ff4040;
+}
+
+.calendar-container .calendar-content .calendar-body {
+  min-height: 6rem;
+  border-top: 1px solid #e5e5e5;
+  border-left: 1px solid #e5e5e5;
+  padding: 0.25rem;
+}
+
+.calendar-container .calendar-content .calendar-body:not(.current-month):nth-of-type(7n + 1) span {
+  color: #ff404066;
+}
+
+.calendar-container .calendar-content .calendar-body:not(.current-month) span {
+  color: #33333366;
+}
+
+.calendar-container .calendar-content .calendar-body.current-day span {
+  width: 1.7rem;
+  height: 1.7rem;
+  border-radius: 50%;
+  background-color: #135de6;
+  padding: 0.025rem;
+  display: grid;
+  place-content: center;
+  color: white;
+}
+
+.calendar-container .calendar-content .calendar-body:nth-of-type(7n) {
+  border-right: 1px solid #e5e5e5;
+}
+
+.calendar-container .calendar-content .calendar-body:nth-of-type(36) {
+  border-bottom: 1px solid #e5e5e5;
+}
+
+.calendar-container .calendar-content .calendar-body:nth-of-type(37) {
+  border-bottom: 1px solid #e5e5e5;
+}
+
+.calendar-container .calendar-content .calendar-body:nth-of-type(38) {
+  border-bottom: 1px solid #e5e5e5;
+}
+
+.calendar-container .calendar-content .calendar-body:nth-of-type(39) {
+  border-bottom: 1px solid #e5e5e5;
+}
+
+.calendar-container .calendar-content .calendar-body:nth-of-type(40) {
+  border-bottom: 1px solid #e5e5e5;
+}
+
+.calendar-container .calendar-content .calendar-body:nth-of-type(41) {
+  border-bottom: 1px solid #e5e5e5;
+}
+
+.calendar-container .calendar-content .calendar-body:nth-of-type(42) {
+  border-bottom: 1px solid #e5e5e5;
+}
+
+.calendar-container .calendar-content .calendar-body span {
+  color: #333333;
+}
+
+.calendar-container .calendar-content .calendar-body:nth-of-type(7n + 1) span {
+  color: #ff4040;
+}

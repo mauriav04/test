@@ -1,0 +1,79 @@
+/* Contenedor principal */
+main {
+  font-family: 'Arial', sans-serif;
+  background-color: #f9fafb; /* Fondo suave */
+  color: #333;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Título */
+h1 {
+  font-size: 24px;
+  font-weight: bold;
+  color: #4a4a4a;
+  margin-bottom: 16px;
+  text-transform: capitalize;
+  letter-spacing: 1px;
+}
+
+/* Contenedor de la lista de clientes */
+div p {
+  font-size: 16px;
+  color: #8b0404;
+  font-style: italic;
+  text-align: center;
+}
+
+/* Lista de clientes */
+span {
+  font-size: 18px;
+  font-weight: 600;
+  color: #2d3748;
+  margin: 4px 8px;
+  padding: 4px 8px;
+  border-radius: 4px;
+  background-color: #edf2f7;
+  display: inline-block;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+/* Hover sobre los elementos de clientes */
+span:hover {
+  background-color: #4299e1;
+  color: white;
+  transform: scale(1.05);
+}
+
+/* Resaltado para el contenedor de clientes */
+.flex {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.flex h1 {
+  color: #2d3748;
+}
+
+/* Paddings y márgenes en contenedores */
+.p-4 {
+  padding: 16px;
+}
+
+.mb-4 {
+  margin-bottom: 16px;
+}
+
+/* Adaptabilidad para pantallas pequeñas */
+@media (max-width: 600px) {
+  h1 {
+    font-size: 20px;
+  }
+
+  span {
+    font-size: 16px;
+    margin: 2px 4px;
+  }
+}

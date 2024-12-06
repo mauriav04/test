@@ -1,0 +1,70 @@
+<div class="container mx-auto p-8 max-w-3xl">
+  <div *ngIf="reserveCreated" class="mb-6 text-center">
+    <h4 class="text-green-600 font-semibold">Reserve Created Successfully</h4>
+  </div>
+
+  <div *ngIf="isAuthenticated">
+    <h2 class="text-4xl font-extrabold text-center text-gray-800 mb-8">Create An Appointment</h2>
+
+    <form [formGroup]="addReserveForm" (ngSubmit)="onSubmit()" class="bg-white rounded-xl shadow-lg p-10 space-y-8 border-2 border-gray-200">
+
+      <div class="mb-6">
+        <label class="block text-gray-700 text-xl font-medium mb-2" for="appointmentDate">Date</label>
+        <input
+          type="text"
+          id="appointmentDate"
+          formControlName="appointmentDate"
+          class="input-field"
+          placeholder="Enter appointment date"
+        />
+        <div *ngIf="appointmentDate?.invalid && (appointmentDate?.dirty || appointmentDate?.touched)" class="text-red-500 text-sm mt-2">
+          <div *ngIf="appointmentDate?.errors?.['required']">Date is required.</div>
+        </div>
+      </div>
+
+      <div class="mb-6">
+        <label class="block text-gray-700 text-xl font-medium mb-2" for="notes">Name</label>
+        <input
+          type="text"
+          id="notes"
+          formControlName="notes"
+          class="input-field"
+          placeholder="Enter appointment name"
+        />
+        <div *ngIf="notes?.invalid && (notes?.dirty || notes?.touched)" class="text-red-500 text-sm mt-2">
+          <div *ngIf="notes?.errors?.['required']">Name is required.</div>
+          <div *ngIf="notes?.errors?.['minlength']">Name must be at least 3 characters long.</div>
+        </div>
+      </div>
+
+      <div class="mb-6">
+        <label class="block text-gray-700 text-xl font-medium mb-2" for="clientId">Description</label>
+        <textarea
+          id="clientId"
+          formControlName="clientId"
+          class="input-field"
+          placeholder="Enter appointment description"
+          rows="5"
+        ></textarea>
+        <div *ngIf="clientId?.invalid && (clientId?.dirty || clientId?.touched)" class="text-red-500 text-sm mt-2">
+          <div *ngIf="clientId?.errors?.['required']">Description is required.</div>
+          <div *ngIf="clientId?.errors?.['minlength']">Description must be at least 10 characters long.</div>
+        </div>
+      </div>
+
+      <div class="text-center">
+        <button
+          type="submit"
+          class="bg-green-600 text-white px-8 py-4 rounded-xl font-semibold text-lg hover:bg-green-700 transition-all duration-300 ease-in-out transform hover:scale-105"
+          [disabled]="addReserveForm.invalid"
+        >
+          Add Appointment
+        </button>
+      </div>
+    </form>
+  </div>
+
+  <div *ngIf="!isAuthenticated" class="text-center text-gray-600">
+    <p>You need to be logged in to create an appointment.</p>
+  </div>
+</div>
